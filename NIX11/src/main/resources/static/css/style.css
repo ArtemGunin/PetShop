@@ -1,0 +1,45 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+body {
+  /* Используемое изображение */
+  background-image: url("static/images/background.JPG");
+
+  min-height: 380px;
+
+  /* Центр и масштаб изображения */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Необходимые для позиционирования навигации */
+  position: relative;
+}
+
+/* Положение контейнера навигации внутри изображения */
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+/* Навигационная панель */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Ссылки на навигационную панель */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}

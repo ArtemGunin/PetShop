@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+    <title>Menu</title>
+</head>
+<body>
+<style>
+    body {
+  background-image: url("../../../static/images/background.JPG");
+
+  min-height: 380px;
+
+  /* Центр и масштаб изображения */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Необходимые для позиционирования навигации */
+  position: relative;
+}
+</style>
+<h1>ANIMALtion</h1>
+<div class="bg-img">
+    <div class="container">
+        <div sec:authorize="isAuthenticated()">
+            <div>
+                Hello, <a th:href="@{/users/profile}"><span sec:authentication="principal.username">Guest</span></a>
+            </div>
+            <div>
+                <a th:href="@{/logout}">Logout</a>
+            </div>
+        </div>
+
+        <div sec:authorize="!isAuthenticated()">
+            <div>
+                Hello, Unknown. Please <a th:href="@{/login}">Login</a>
+            </div>
+        </div>
+        <div class="topnav">
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/products}">Products</a>
+            <a th:href="@{/users/new}">Registration</a>
+            <a th:href="@{/basket}">Basket</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
