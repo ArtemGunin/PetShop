@@ -90,10 +90,19 @@ public class ProductServiceImp implements ProductService {
     }
 
     @Override
+    public List<ProductDTO> findByManufacturer(Manufacturer manufacturer) {
+        return mapper.fromProductList(productRepository.findByManufacturer(manufacturer));
+    }
+
+    @Override
     public List<ProductDTO> findByPetType(PetType petType) {
         return mapper.fromProductList(productRepository.findByPetType(petType));
     }
 
+    @Override
+    public List<ProductDTO> findByColor(Color color) {
+        return mapper.fromProductList(productRepository.findByColor(color));
+    }
 
     @Override
     @Transactional
