@@ -2,24 +2,96 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <title>Pet shop</title>
-    <style>
-    body {
-  background-image: url("../../../static/images/background.JPG");
-
-  min-height: 380px;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  position: relative;
-}
-
-    </style>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <div th:insert="~{fragments/menu :: #nav-menu}"></div>
+
+<p></p>
+<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
+            Select manufacturer
+        </button>
+
+        <ul class="dropdown-menu" style="background-color: #C7FCEC;">
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=TRIXIE">TRIXIE</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=PRO_PLAN">PRO_PLAN</a>
+            </li>
+            <li><a class="dropdown-item"
+                   href="products/find-by-manufacturer?manufacturer=ROYAL_CANIN">ROYAL_CANIN</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=PURINA">PURINA</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=OPTI_MEAL">OPTI_MEAL</a>
+            </li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=ZOE">ZOE</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=ZOOLEK">ZOOLEK</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=VETOS">VETOS</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=KOTIX">KOTIX</a></li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=ETHIOPOS">ETHIOPOS</a>
+            </li>
+            <li><a class="dropdown-item" href="products/find-by-manufacturer?manufacturer=PRO_VET">PRO_VET</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
+            Select type of products
+        </button>
+
+        <ul class="dropdown-menu" style="background-color: #C7FCEC;">
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=FOOD">FOOD</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=CRATES">CRATES</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=FILLER">FILLER</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=LITTER">LITTER</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=BOX">BOX</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=TOY">TOY</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=TRAY">TRAY</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=FEEDER">FEEDER</a></li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=VETERINARY_PRODUCT">VETERINARY_PRODUCT</a>
+            </li>
+            <li><a class="dropdown-item" href="products/find-by-product-type?productType=HYGIENE_PRODUCT">HYGIENE_PRODUCT</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
+            Select color
+        </button>
+
+        <ul class="dropdown-menu" style="background-color: #C7FCEC;">
+            <li><a class="dropdown-item" href="products/find-by-color?color=BLACK">BLACK</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=RED">RED</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=BLUE">BLUE</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=GREEN">GREEN</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=WHITE">WHITE</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=YELLOW">YELLOW</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=ORANGE">ORANGE</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=GREY">GREY</a></li>
+            <li><a class="dropdown-item" href="products/find-by-color?color=BROWN">BROWN</a></li>
+        </ul>
+    </div>
+
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false">
+            Select type of your pet
+        </button>
+
+        <ul class="dropdown-menu" style="background-color: #C7FCEC;">
+            <li><a class="dropdown-item" href="products/find-by-pet-type?petType=DOG">DOG</a></li>
+            <li><a class="dropdown-item" href="products/find-by-pet-type?petType=CAT">CAT</a></li>
+            <li><a class="dropdown-item" href="products/find-by-pet-type?petType=BIRD">BIRD</a></li>
+            <li><a class="dropdown-item" href="products/find-by-pet-type?petType=RODENT">RODENT</a></li>
+            <li><a class="dropdown-item" href="products/find-by-pet-type?petType=ELEPHANT">ELEPHANT</a></li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

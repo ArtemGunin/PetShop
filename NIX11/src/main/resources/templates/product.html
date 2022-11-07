@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div th:insert="~{fragments/menu :: #nav-menu}"></div>
+<div class="card mb-3" style="width: 100%; background-color: #A2A2D0">
+    <div class="row g-0">
+        <div class="col-md-4" th:action="@{/products/product}" th:object="${product}">
+            <img th:src="@{${product.imgUrl}}" class="img-fluid rounded-start" alt="Card image cap">
+        </div>
+        <div class="col-md-8">
+            <div style="overflow-x:auto;">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th><h5><a th:text="|${product.title}|"></a></h5></th>
+                    </tr>
+                    <tr>
+                        <td>Count:</td>
+                        <td><a th:text="|${product.count}|"></a></td>
+                    </tr>
+                    <tr>
+                        <td>Type of pet:</td>
+                        <td><a th:text="|${product.petType}|"></a></td>
+                    </tr>
+                    <tr>
+                        <td>Manufacturer:</td>
+                        <td><a th:text="|${product.manufacturer}|"></a></td>
+                    </tr>
+                    <tr>
+                        <td>Color:</td>
+                        <td><a th:text="|${product.color}|"></a></td>
+                    </tr>
+                    <tr>
+                        <td>Type of product:</td>
+                        <td><a th:text="|${product.productType}|"></a></td>
+                    </tr>
+                    <tr>
+                        <td>Weight:</td>
+                        <td><a th:text="|${product.weight}|"></a></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Price: </a></h5></td>
+                        <td><h5><a th:text="|${product.price}|"></a></h5></td>
+                    </tr>
+                </table>
+                <h6>Product description: </h6>
+                <h6><a th:text="|${product.description}|"></a></h6>
+                <button type="button" class="btn btn-primary"><a
+                        th:href="@{/products/product/updateProduct/{id}(id=${product.id})}" class="btn btn-primary">Update</a></button>
+                <button type="button" class="btn btn-primary"><a
+                        th:href="@{/products/product/basket/{id}(id=${product.id})}" class="btn btn-primary">Add to basket</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
